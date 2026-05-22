@@ -15,6 +15,12 @@ body {
   --input-radius: var(--clw-radius-s);
   --tab-radius-active: var(--clw-radius-m);
   --modal-radius: var(--clw-radius-l);
+  --list-indent: 2em;
+  --list-indent-editing: 0.86em;
+  --list-spacing: 0.14em;
+  --list-bullet-size: 0.36em;
+  --list-marker-color: color-mix(in srgb, var(--clw-support) 54%, var(--text-muted));
+  --list-marker-color-hover: color-mix(in srgb, var(--clw-support) 68%, var(--text-normal));
   --blockquote-border-thickness: 3px;
   --blockquote-border-color: var(--clw-support);
   --blockquote-background-color: var(--clw-quote-bg);
@@ -406,6 +412,12 @@ body {
 }
 
 /* Ordered list hierarchy */
+.markdown-rendered ol > li::marker,
+.markdown-rendered ul > li::marker {
+  color: var(--list-marker-color);
+  font-weight: 560;
+}
+
 .markdown-rendered ol,
 .markdown-rendered ol ol ol ol {
   list-style-type: decimal;
@@ -425,6 +437,21 @@ body {
 
 .markdown-rendered ol ol ol ol ol ol {
   list-style-type: lower-roman;
+}
+
+.markdown-rendered ul ul > li > .list-bullet {
+  --list-bullet-radius: 2px;
+  --list-bullet-size: 0.34em;
+}
+
+.markdown-rendered ul ul ul > li > .list-bullet {
+  --list-bullet-border: var(--clw-border-width) solid var(--list-marker-color);
+  --list-bullet-radius: 50%;
+  --list-bullet-size: 0.44em;
+}
+
+.markdown-rendered ul ul ul > li > .list-bullet::after {
+  background-color: transparent;
 }
 
 /* Structured note blocks */

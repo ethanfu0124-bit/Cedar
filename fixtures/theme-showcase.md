@@ -17,6 +17,22 @@ This note checks whether the theme stays calm while [[Internal links]] and #inde
 2. Shape the note.
 3. Connect the reference.
 
+## List Structure
+
+1. Draft the chapter.
+   1. Refine the section.
+      1. Roman detail should remain legible.
+      2. A second detail checks spacing.
+   2. Return to the lettered layer.
+2. Continue the manuscript.
+
+- Unordered thread
+  - Supporting branch
+    - Fine-grain leaf
+    - Another fine-grain leaf
+  - Neighboring branch
+- Closing thread
+
 ### Manuscript Detail
 
 This subsection checks whether smaller chapter turns remain visible inside a note.
