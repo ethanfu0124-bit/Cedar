@@ -1,0 +1,6 @@
+# Local planning artifacts from the theme design session.
+docs/superpowers/
+
+# OS metadata.
+.DS_Store
+Thumbs.db

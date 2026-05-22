@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 360" role="img" aria-labelledby="title desc">
+  <title id="title">Cedar fixture image</title>
+  <desc id="desc">A warm paper sample with restrained green and cedar color bands for theme media verification.</desc>
+  <rect width="960" height="360" fill="#f4ede3"/>
+  <rect x="36" y="36" width="888" height="288" rx="28" fill="#fbf7ef" stroke="#d8cdc0" stroke-width="4"/>
+  <rect x="84" y="86" width="276" height="24" rx="12" fill="#a45c43"/>
+  <rect x="84" y="142" width="522" height="18" rx="9" fill="#647a73"/>
+  <rect x="84" y="182" width="658" height="18" rx="9" fill="#d8cdc0"/>
+  <rect x="84" y="222" width="418" height="18" rx="9" fill="#d8cdc0"/>
+  <circle cx="816" cy="180" r="74" fill="#e8d7c9"/>
+  <path d="M778 214c26-58 50-86 84-101-10 41-33 76-84 101Z" fill="#647a73"/>
+</svg>
