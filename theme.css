@@ -607,6 +607,8 @@ body button,
 body .setting-item button,
 body .modal button,
 body .vertical-tab-nav-item,
+body .workspace-tab-header-inner-close-button,
+body .search-input-clear-button,
 body select,
 body .dropdown {
   cursor: pointer;
