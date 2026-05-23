@@ -590,26 +590,26 @@ button,
 }
 
 /* Cursor */
-.workspace-tab-header,
-.nav-file-title,
-.nav-folder-title,
-.tree-item-self,
-.clickable-icon,
-.side-dock-ribbon-action,
-.tag,
-.cm-hashtag,
-.metadata-property-key,
-.metadata-property-value,
-.suggestion-item,
-.menu-item,
-.search-result-file-match,
-.checkbox-container,
-input[type="checkbox"] {
+body .workspace-tab-header,
+body .nav-file-title,
+body .nav-folder-title,
+body .tree-item-self,
+body .clickable-icon,
+body .side-dock-ribbon-action,
+body .tag,
+body .cm-hashtag,
+body .metadata-property-key,
+body .metadata-property-value,
+body .suggestion-item,
+body .menu-item,
+body .search-result-file-match,
+body .checkbox-container,
+body input[type="checkbox"] {
   cursor: pointer;
 }
 
-.markdown-source-view.mod-cm6 .cm-contentContainer,
-.markdown-preview-view .markdown-preview-sizer {
+body .markdown-source-view.mod-cm6 .cm-contentContainer,
+body .markdown-preview-view .markdown-preview-sizer {
   cursor: text;
 }
 
