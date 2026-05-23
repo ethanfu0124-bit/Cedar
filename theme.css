@@ -647,6 +647,47 @@ input[type="checkbox"] {
   background: var(--background-modifier-hover);
 }
 
+/* Graph view */
+.graph-view.color-fill {
+  color: var(--clw-shell);
+}
+
+.graph-view.color-fill-highlight {
+  color: var(--clw-accent);
+}
+
+.graph-view.color-fill-unresolved {
+  color: var(--text-faint);
+}
+
+.graph-view.color-fill-tag {
+  color: var(--clw-accent);
+}
+
+.graph-view.color-fill-attachment {
+  color: var(--clw-support);
+}
+
+.graph-view.color-line {
+  color: color-mix(in srgb, var(--clw-border) 72%, transparent);
+}
+
+.graph-view.color-line-highlight {
+  color: var(--clw-accent);
+}
+
+.graph-view.color-arrow {
+  color: var(--text-faint);
+}
+
+.graph-view.color-text {
+  color: var(--text-normal);
+}
+
+.graph-view.color-circle {
+  color: var(--clw-accent);
+}
+
 /* Narrow layout guardrails */
 @media (max-width: 900px) {
   body {
