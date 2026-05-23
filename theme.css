@@ -332,7 +332,7 @@ body {
 .cm-searchMatch {
   background: var(--clw-search);
   color: var(--text-normal);
-  border-radius: 4px;
+  border-radius: var(--clw-radius-s);
 }
 
 /* Inline syntax */
@@ -367,7 +367,7 @@ body {
 
 .markdown-rendered mark,
 .markdown-source-view.mod-cm6 .cm-highlight {
-  border-radius: 4px;
+  border-radius: var(--clw-radius-s);
   background: var(--clw-highlight);
   color: var(--text-normal);
   padding-inline: 0.08em;
@@ -644,63 +644,6 @@ body .dropdown {
 
 .search-result-file-match:hover {
   background: var(--background-modifier-hover);
-}
-
-/* Graph view */
-.graph-view.color-fill {
-  color: var(--clw-shell);
-}
-
-.graph-view.color-fill-focused {
-  color: var(--clw-accent);
-}
-
-.graph-view.color-fill-highlight {
-  color: var(--clw-accent);
-}
-
-.graph-view.color-fill-unresolved {
-  color: var(--text-faint);
-}
-
-.graph-view.color-fill-tag {
-  color: var(--clw-accent);
-}
-
-.graph-view.color-fill-attachment {
-  color: var(--clw-support);
-}
-
-.graph-view.color-line {
-  color: color-mix(in srgb, var(--clw-border) 72%, transparent);
-}
-
-.graph-view.color-line-highlight {
-  color: var(--clw-accent);
-}
-
-.graph-view.color-arrow {
-  color: var(--text-faint);
-}
-
-.graph-view.color-text {
-  color: var(--text-normal);
-}
-
-.graph-view.color-circle {
-  color: var(--clw-accent);
-}
-
-.graph-view.color-fill-opacity {
-  color: rgba(128, 128, 128, 0.24);
-}
-
-.graph-view.color-line-opacity {
-  color: rgba(128, 128, 128, 0.28);
-}
-
-.graph-view.color-line-unresolved {
-  color: var(--text-faint);
 }
 
 /* Narrow layout guardrails */
