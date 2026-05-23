@@ -589,6 +589,30 @@ button,
   border-radius: var(--clw-radius-s);
 }
 
+/* Cursor */
+.workspace-tab-header,
+.nav-file-title,
+.nav-folder-title,
+.tree-item-self,
+.clickable-icon,
+.side-dock-ribbon-action,
+.tag,
+.cm-hashtag,
+.metadata-property-key,
+.metadata-property-value,
+.suggestion-item,
+.menu-item,
+.search-result-file-match,
+.checkbox-container,
+input[type="checkbox"] {
+  cursor: pointer;
+}
+
+.markdown-source-view.mod-cm6 .cm-contentContainer,
+.markdown-preview-view .markdown-preview-sizer {
+  cursor: text;
+}
+
 /* Floating layers */
 .prompt,
 .modal,
