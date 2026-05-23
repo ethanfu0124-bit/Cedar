@@ -652,6 +652,10 @@ input[type="checkbox"] {
   color: var(--clw-shell);
 }
 
+.graph-view.color-fill-focused {
+  color: var(--clw-accent);
+}
+
 .graph-view.color-fill-highlight {
   color: var(--clw-accent);
 }
