@@ -598,8 +598,6 @@ body .clickable-icon,
 body .side-dock-ribbon-action,
 body .tag,
 body .cm-hashtag,
-body .metadata-property-key,
-body .metadata-property-value,
 body .suggestion-item,
 body .menu-item,
 body .search-result-file-match,
@@ -690,6 +688,18 @@ body .markdown-preview-view .markdown-preview-sizer {
 
 .graph-view.color-circle {
   color: var(--clw-accent);
+}
+
+.graph-view.color-fill-opacity {
+  color: rgba(128, 128, 128, 0.24);
+}
+
+.graph-view.color-line-opacity {
+  color: rgba(128, 128, 128, 0.28);
+}
+
+.graph-view.color-line-unresolved {
+  color: var(--text-faint);
 }
 
 /* Narrow layout guardrails */
