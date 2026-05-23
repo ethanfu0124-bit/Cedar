@@ -605,8 +605,15 @@ body .checkbox-container,
 body input[type="checkbox"],
 body button,
 body .setting-item button,
-body .modal button {
+body .modal button,
+body select,
+body .dropdown {
   cursor: pointer;
+}
+
+body .markdown-source-view.mod-cm6 .cm-contentContainer,
+body .markdown-source-view.mod-cm6 .cm-scroller {
+  cursor: default;
 }
 
 body .markdown-source-view.mod-cm6 .cm-line,
