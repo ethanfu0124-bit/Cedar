@@ -1,5 +1,5 @@
 /*
- * Cedar
+ * Cedar v0.2.0
  * Warm paper notes with a rounded knowledge workbench.
  */
 
@@ -8,7 +8,7 @@ body {
   --clw-radius-m: 12px;
   --clw-radius-l: 18px;
   --clw-border-width: 1px;
-  --clw-editor-width: 780px;
+  --clw-editor-width: 740px;
   --radius-s: var(--clw-radius-s);
   --radius-m: var(--clw-radius-m);
   --radius-l: var(--clw-radius-l);
@@ -39,21 +39,23 @@ body {
 .theme-light {
   --clw-shell: #ece7df;
   --clw-shell-raised: #f4efe7;
-  --clw-paper: #fbf7ef;
+  --clw-paper: #f6f3ee;
   --clw-card: #f3ede4;
   --clw-card-strong: #fffaf2;
   --clw-border: #d8cdc0;
   --clw-ink: #302b27;
   --clw-ink-muted: #6d6258;
-  --accent-h: 18;
-  --accent-s: 43%;
-  --accent-l: 50%;
+  --accent-h: 25;
+  --accent-s: 52%;
+  --accent-l: 53%;
   --clw-accent: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
   --clw-accent-hover: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) - 4%));
   --clw-support: #647a73;
   --clw-selection: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.22);
   --clw-search: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.28);
   --clw-shadow: 0 18px 44px rgba(68, 48, 31, 0.14);
+  --clw-shadow-s: 0 1px 3px rgba(68, 48, 31, 0.08);
+  --clw-shadow-m: 0 4px 12px rgba(68, 48, 31, 0.10);
   --background-primary: var(--clw-paper);
   --background-primary-alt: var(--clw-shell-raised);
   --background-secondary: var(--clw-shell);
@@ -74,36 +76,21 @@ body {
   --text-accent-hover: var(--clw-accent-hover);
   --text-selection: var(--clw-selection);
   --text-highlight-bg: var(--clw-search);
-  --clw-strong: #6a281a;
   --clw-strong: color-mix(in srgb, var(--clw-accent-hover) 76%, var(--text-normal));
-  --clw-emphasis: #315f58;
   --clw-emphasis: color-mix(in srgb, var(--clw-support) 82%, var(--text-normal));
-  --clw-inline-code-bg: #eadfd3;
   --clw-inline-code-bg: color-mix(in srgb, var(--clw-card) 78%, var(--clw-accent));
-  --clw-inline-code-border: #bc9586;
   --clw-inline-code-border: color-mix(in srgb, var(--clw-border) 56%, var(--clw-accent));
-  --clw-inline-code-text: #542f25;
   --clw-inline-code-text: color-mix(in srgb, var(--text-normal) 58%, var(--clw-accent-hover));
-  --clw-highlight: #f1d27c;
   --clw-highlight: color-mix(in srgb, #edc85d 76%, var(--clw-paper));
-  --clw-quote-bg: rgba(243, 237, 228, 0.62);
   --clw-quote-bg: color-mix(in srgb, var(--clw-card) 54%, transparent);
-  --clw-quote-text: #51473f;
   --clw-quote-text: color-mix(in srgb, var(--text-normal) 84%, var(--text-muted));
-  --clw-code-surface: #eee5da;
   --clw-code-surface: color-mix(in srgb, var(--clw-shell-raised) 82%, var(--clw-card-strong));
   --heading-spacing: calc(var(--p-spacing) * 2.18);
-  --h1-color: #5e2e20;
   --h1-color: color-mix(in srgb, var(--clw-accent-hover) 58%, var(--text-normal));
-  --h2-color: #4f4038;
   --h2-color: color-mix(in srgb, var(--text-normal) 82%, var(--clw-accent));
-  --h3-color: #405f59;
-  --h3-color: color-mix(in srgb, var(--text-normal) 56%, var(--clw-support));
-  --h4-color: #4f5651;
-  --h4-color: color-mix(in srgb, var(--text-normal) 74%, var(--clw-support));
-  --h5-color: #655b52;
-  --h5-color: color-mix(in srgb, var(--text-normal) 84%, var(--text-muted));
-  --h6-color: #74665b;
+  --h3-color: color-mix(in srgb, var(--text-normal) 72%, var(--clw-accent));
+  --h4-color: color-mix(in srgb, var(--text-normal) 82%, var(--clw-accent));
+  --h5-color: color-mix(in srgb, var(--text-normal) 90%, var(--text-muted));
   --h6-color: color-mix(in srgb, var(--text-muted) 68%, var(--text-normal));
   --h1-letter-spacing: 0;
   --h2-letter-spacing: 0;
@@ -132,7 +119,7 @@ body {
 .theme-dark {
   --clw-shell: #1d1b19;
   --clw-shell-raised: #24211e;
-  --clw-paper: #2b2723;
+  --clw-paper: #272420;
   --clw-card: #24211e;
   --clw-card-strong: #322c27;
   --clw-border: #453b33;
@@ -147,6 +134,8 @@ body {
   --clw-selection: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.28);
   --clw-search: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.34);
   --clw-shadow: 0 22px 56px rgba(0, 0, 0, 0.38);
+  --clw-shadow-s: 0 1px 3px rgba(0, 0, 0, 0.16);
+  --clw-shadow-m: 0 4px 12px rgba(0, 0, 0, 0.22);
   --background-primary: var(--clw-paper);
   --background-primary-alt: var(--clw-shell-raised);
   --background-secondary: var(--clw-shell);
@@ -167,36 +156,21 @@ body {
   --text-accent-hover: var(--clw-accent-hover);
   --text-selection: var(--clw-selection);
   --text-highlight-bg: var(--clw-search);
-  --clw-strong: #ffc1a0;
   --clw-strong: color-mix(in srgb, var(--clw-accent-hover) 72%, var(--text-normal));
-  --clw-emphasis: #a8d2ca;
   --clw-emphasis: color-mix(in srgb, var(--clw-support) 84%, var(--text-normal));
-  --clw-inline-code-bg: #49352d;
   --clw-inline-code-bg: color-mix(in srgb, var(--clw-card-strong) 74%, var(--clw-accent));
-  --clw-inline-code-border: #795749;
   --clw-inline-code-border: color-mix(in srgb, var(--clw-border) 54%, var(--clw-accent));
-  --clw-inline-code-text: #ffd4bd;
   --clw-inline-code-text: color-mix(in srgb, var(--text-normal) 64%, var(--clw-accent-hover));
-  --clw-highlight: #87611f;
   --clw-highlight: color-mix(in srgb, #946a1d 76%, var(--clw-paper));
-  --clw-quote-bg: rgba(36, 33, 30, 0.72);
   --clw-quote-bg: color-mix(in srgb, var(--clw-card) 64%, transparent);
-  --clw-quote-text: #ddd0c2;
   --clw-quote-text: color-mix(in srgb, var(--text-normal) 82%, var(--text-muted));
-  --clw-code-surface: #29231f;
   --clw-code-surface: color-mix(in srgb, var(--clw-shell-raised) 82%, var(--clw-card-strong));
   --heading-spacing: calc(var(--p-spacing) * 2.18);
-  --h1-color: #ffd1b4;
   --h1-color: color-mix(in srgb, var(--clw-accent-hover) 62%, var(--text-normal));
-  --h2-color: #efc8af;
   --h2-color: color-mix(in srgb, var(--text-normal) 66%, var(--clw-accent));
-  --h3-color: #b7d2cb;
-  --h3-color: color-mix(in srgb, var(--text-normal) 52%, var(--clw-support));
-  --h4-color: #d2d4cd;
-  --h4-color: color-mix(in srgb, var(--text-normal) 74%, var(--clw-support));
-  --h5-color: #d6cabd;
+  --h3-color: color-mix(in srgb, var(--text-normal) 72%, var(--clw-accent));
+  --h4-color: color-mix(in srgb, var(--text-normal) 82%, var(--clw-accent));
   --h5-color: color-mix(in srgb, var(--text-normal) 84%, var(--text-muted));
-  --h6-color: #c2b3a6;
   --h6-color: color-mix(in srgb, var(--text-muted) 68%, var(--text-normal));
   --h1-letter-spacing: 0;
   --h2-letter-spacing: 0;
@@ -257,6 +231,7 @@ body {
 
 .workspace-tab-header.is-active {
   background: var(--clw-card-strong);
+  box-shadow: var(--clw-shadow-m);
   color: var(--text-normal);
 }
 
@@ -311,6 +286,7 @@ body {
 .markdown-source-view.mod-cm6 .cm-scroller,
 .markdown-preview-view {
   line-height: 1.65;
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "palt" 1;
 }
 
 .markdown-rendered a.internal-link,
@@ -322,8 +298,8 @@ body {
 .cm-hashtag {
   border: var(--clw-border-width) solid var(--clw-border);
   border-radius: var(--clw-radius-s);
-  background: var(--clw-card-strong);
   background: color-mix(in srgb, var(--clw-card-strong) 84%, var(--clw-support));
+  box-shadow: var(--clw-shadow-s);
   color: var(--text-normal);
   padding-inline: 0.42em;
 }
@@ -356,13 +332,33 @@ body {
   font-weight: 760;
 }
 
-.markdown-rendered :not(pre) > code,
-.markdown-source-view.mod-cm6 .cm-inline-code {
+/* Reading mode: single <code> element, border+padding work fine */
+.markdown-rendered :not(pre) > code {
   border: var(--clw-border-width) solid var(--clw-inline-code-border);
   border-radius: var(--clw-radius-s);
   background: var(--clw-inline-code-bg);
+  box-shadow: var(--clw-shadow-s);
   color: var(--clw-inline-code-text);
   padding: 0.12em 0.42em;
+}
+
+/* Edit mode: three separate spans (open-backtick · content · close-backtick).
+   Apply the pill only to the content span — no background on delimiter spans,
+   so there are no per-span boxes and no corner artefacts at the junctions. */
+.markdown-source-view.mod-cm6 .cm-inline-code {
+  color: var(--clw-inline-code-text);
+}
+
+.markdown-source-view.mod-cm6 .cm-inline-code:not(.cm-formatting) {
+  border-radius: var(--clw-radius-s);
+  background: var(--clw-inline-code-bg);
+  box-shadow: var(--clw-shadow-s);
+  padding: 0.12em 0.24em;
+}
+
+/* Fade backtick delimiters so they recede visually */
+.markdown-source-view.mod-cm6 .cm-formatting-code {
+  color: var(--text-faint);
 }
 
 .markdown-rendered mark,
@@ -375,9 +371,7 @@ body {
 
 .markdown-rendered del,
 .markdown-source-view.mod-cm6 .cm-strikethrough {
-  color: var(--text-muted);
   color: color-mix(in srgb, var(--text-muted) 78%, var(--text-normal));
-  text-decoration-color: var(--text-muted);
   text-decoration-color: color-mix(in srgb, var(--text-muted) 54%, var(--clw-accent));
   text-decoration-thickness: 0.1em;
 }
@@ -387,7 +381,6 @@ body {
 .markdown-source-view.mod-cm6 .cm-link,
 .markdown-source-view.mod-cm6 .cm-hmd-internal-link {
   text-decoration-line: underline;
-  text-decoration-color: var(--text-accent);
   text-decoration-color: color-mix(in srgb, var(--text-accent) 84%, transparent);
   text-decoration-thickness: 0.1em;
   text-underline-offset: 0.16em;
@@ -397,7 +390,6 @@ body {
 .markdown-rendered a.internal-link:hover,
 .markdown-source-view.mod-cm6 .cm-link:hover,
 .markdown-source-view.mod-cm6 .cm-hmd-internal-link:hover {
-  text-decoration-color: var(--text-accent-hover);
   text-decoration-color: color-mix(in srgb, var(--text-accent-hover) 94%, transparent);
   text-decoration-thickness: 0.14em;
 }
@@ -406,9 +398,13 @@ body {
 .markdown-rendered sub,
 .markdown-rendered .footnote-ref,
 .markdown-source-view.mod-cm6 .cm-footref {
-  color: var(--clw-support);
   color: color-mix(in srgb, var(--text-accent) 58%, var(--text-normal));
   font-weight: 620;
+}
+
+/* Formatting markers (** _ == ~~ etc.) recede into background */
+.markdown-source-view.mod-cm6 .cm-formatting:not(.cm-formatting-code) {
+  color: var(--text-faint);
 }
 
 /* Ordered list hierarchy */
@@ -457,17 +453,15 @@ body {
 /* Structured note blocks */
 .markdown-rendered blockquote {
   border-inline-start-color: var(--blockquote-border-color);
-  border-radius: 0 var(--clw-radius-s) var(--clw-radius-s) 0;
+  border-radius: var(--clw-radius-s);
   color: var(--blockquote-color);
   padding: var(--size-4-2) var(--size-4-3);
 }
 
 .callout {
-  border: var(--clw-border-width) solid var(--clw-border);
   border: var(--clw-border-width) solid color-mix(in srgb, rgb(var(--callout-color)) 44%, var(--clw-border));
   border-radius: var(--clw-radius-m);
-  background: var(--clw-card-strong);
-  background: color-mix(in srgb, rgb(var(--callout-color)) 7%, var(--clw-card-strong));
+  background: color-mix(in srgb, rgb(var(--callout-color)) 11%, var(--clw-card-strong));
   box-shadow: inset 0 1px 0 color-mix(in srgb, rgb(var(--callout-color)) 11%, transparent);
 }
 
@@ -502,7 +496,6 @@ body {
 .metadata-container {
   border: var(--clw-border-width) solid var(--clw-border);
   border-radius: var(--clw-radius-m);
-  background: var(--clw-card-strong);
   background: color-mix(in srgb, var(--clw-card-strong) 88%, transparent);
   padding: var(--size-4-2);
 }
@@ -648,6 +641,40 @@ body .dropdown {
   background: var(--background-modifier-hover);
 }
 
+/* Hr — gradient fade-out */
+.markdown-rendered hr,
+.cm-line.HyperMD-hr {
+  border: none;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--clw-border) 20%,
+    var(--clw-border) 80%,
+    transparent
+  );
+  opacity: 0.7;
+  margin-block: var(--size-4-4);
+}
+
+/* Checklist */
+.markdown-rendered .task-list-item-checkbox {
+  border-color: var(--clw-border);
+  background: transparent;
+}
+
+.markdown-rendered .task-list-item.is-checked .task-list-item-checkbox,
+.markdown-source-view.mod-cm6 input[type="checkbox"]:checked {
+  background-color: var(--interactive-accent);
+  border-color: var(--interactive-accent);
+}
+
+.markdown-rendered .task-list-item.is-checked {
+  color: var(--text-muted);
+  text-decoration: line-through;
+  text-decoration-color: color-mix(in srgb, var(--text-muted) 60%, transparent);
+}
+
 /* Narrow layout guardrails */
 @media (max-width: 900px) {
   body {
@@ -663,4 +690,23 @@ body .dropdown {
   .workspace-tab-header {
     min-width: 0;
   }
+}
+
+/* Custom scrollbar — no-op on macOS overlay scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--clw-border);
+  border-radius: 99px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--clw-ink-muted);
 }
