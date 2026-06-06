@@ -607,6 +607,73 @@ body {
 .HyperMD-codeblock .cm-typeName    { color: #b8a8e0; }
 .HyperMD-codeblock .cm-operator    { color: #a09080; }
 
+/* Images */
+.markdown-rendered img {
+  border-radius: var(--clw-radius-m);
+  box-shadow: var(--clw-shadow-m);
+  max-width: 100%;
+}
+
+/* Embedded notes (![[...]]) */
+.markdown-embed {
+  border-left: 3px solid var(--clw-support);
+  border-radius: 0 var(--clw-radius-m) var(--clw-radius-m) 0;
+  background: color-mix(in srgb, var(--clw-card) 60%, transparent);
+  padding: var(--size-4-2) var(--size-4-3);
+  box-shadow: none;
+}
+
+.markdown-embed .markdown-embed-title {
+  color: var(--clw-support);
+  font-weight: 640;
+  font-size: 0.92em;
+}
+
+/* Mermaid diagrams */
+.markdown-rendered .mermaid {
+  background: var(--clw-card-strong);
+  border-radius: var(--clw-radius-m);
+  border: var(--clw-border-width) solid var(--clw-border);
+  padding: var(--size-4-3);
+}
+
+.markdown-rendered .mermaid svg {
+  max-width: 100%;
+}
+
+.mermaid .node rect,
+.mermaid .node circle,
+.mermaid .node ellipse,
+.mermaid .node polygon,
+.mermaid .node path {
+  fill: color-mix(in srgb, var(--clw-accent) 12%, var(--clw-card-strong)) !important;
+  stroke: color-mix(in srgb, var(--clw-accent) 44%, var(--clw-border)) !important;
+}
+
+.mermaid .node .label,
+.mermaid .nodeLabel {
+  color: var(--clw-ink) !important;
+}
+
+.mermaid .edgePath .path,
+.mermaid .flowchart-link {
+  stroke: var(--clw-border) !important;
+}
+
+.mermaid .arrowheadPath {
+  fill: var(--clw-border) !important;
+  stroke: none !important;
+}
+
+.mermaid .cluster rect {
+  fill: color-mix(in srgb, var(--clw-shell) 60%, transparent) !important;
+  stroke: var(--clw-border) !important;
+}
+
+.mermaid .label {
+  color: var(--clw-ink-muted) !important;
+}
+
 .metadata-container {
   border: var(--clw-border-width) solid var(--clw-border);
   border-radius: var(--clw-radius-m);
