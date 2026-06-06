@@ -1044,12 +1044,6 @@ body .dropdown {
   border-radius: var(--clw-radius-m);
   border: var(--clw-border-width) solid var(--clw-border);
   padding: var(--size-4-3) var(--size-4-4);
-  word-break: normal;
-  overflow-wrap: normal;
-  /* Shrink card to formula width so the left border doesn't float as a bracket */
-  width: max-content;
-  max-width: 100%;
-  margin-inline: auto;
   overflow-x: auto;
 }
 
