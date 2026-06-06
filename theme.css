@@ -650,63 +650,11 @@ body {
   display: block;
   color: var(--clw-code-text);
   padding: var(--size-4-4);
+  padding-top: calc(36px + var(--size-4-4));
   line-height: 1.7;
   font-size: 0.875em;
 }
 
-/* Language label in reading-mode header bar */
-/* Language label: in-flow block that occupies the header row, sticky on the
-   left edge so it stays visible when the code scrolls horizontally. */
-.markdown-rendered pre:has(code[class*="language-"])::before {
-  content: "</>";
-  display: block;
-  position: sticky;
-  left: var(--size-4-3);
-  width: max-content;
-  height: 36px;
-  line-height: 36px;
-  color: var(--clw-ink-muted);
-  font-size: 0.72em;
-  font-family: ui-monospace, monospace;
-  letter-spacing: 0.04em;
-  pointer-events: none;
-}
-
-/* Override with human-readable language names */
-.markdown-rendered pre:has(code.language-python)::before,
-.markdown-rendered pre:has(code.language-py)::before     { content: "Python"; }
-.markdown-rendered pre:has(code.language-javascript)::before,
-.markdown-rendered pre:has(code.language-js)::before     { content: "JavaScript"; }
-.markdown-rendered pre:has(code.language-typescript)::before,
-.markdown-rendered pre:has(code.language-ts)::before     { content: "TypeScript"; }
-.markdown-rendered pre:has(code.language-css)::before    { content: "CSS"; }
-.markdown-rendered pre:has(code.language-html)::before   { content: "HTML"; }
-.markdown-rendered pre:has(code.language-json)::before   { content: "JSON"; }
-.markdown-rendered pre:has(code.language-bash)::before,
-.markdown-rendered pre:has(code.language-sh)::before,
-.markdown-rendered pre:has(code.language-shell)::before  { content: "Shell"; }
-.markdown-rendered pre:has(code.language-yaml)::before,
-.markdown-rendered pre:has(code.language-yml)::before    { content: "YAML"; }
-.markdown-rendered pre:has(code.language-markdown)::before,
-.markdown-rendered pre:has(code.language-md)::before     { content: "Markdown"; }
-.markdown-rendered pre:has(code.language-rust)::before,
-.markdown-rendered pre:has(code.language-rs)::before     { content: "Rust"; }
-.markdown-rendered pre:has(code.language-go)::before     { content: "Go"; }
-.markdown-rendered pre:has(code.language-java)::before   { content: "Java"; }
-.markdown-rendered pre:has(code.language-cpp)::before,
-.markdown-rendered pre:has(code.language-c\\+\\+)::before { content: "C++"; }
-.markdown-rendered pre:has(code.language-c)::before      { content: "C"; }
-.markdown-rendered pre:has(code.language-sql)::before    { content: "SQL"; }
-.markdown-rendered pre:has(code.language-ruby)::before,
-.markdown-rendered pre:has(code.language-rb)::before     { content: "Ruby"; }
-.markdown-rendered pre:has(code.language-php)::before    { content: "PHP"; }
-.markdown-rendered pre:has(code.language-swift)::before  { content: "Swift"; }
-.markdown-rendered pre:has(code.language-kotlin)::before { content: "Kotlin"; }
-.markdown-rendered pre:has(code.language-r)::before      { content: "R"; }
-.markdown-rendered pre:has(code.language-lua)::before    { content: "Lua"; }
-.markdown-rendered pre:has(code.language-toml)::before   { content: "TOML"; }
-.markdown-rendered pre:has(code.language-xml)::before    { content: "XML"; }
-.markdown-rendered pre:has(code.language-diff)::before   { content: "Diff"; }
 
 .markdown-rendered pre .copy-code-button {
   background: color-mix(in srgb, var(--clw-border) 30%, var(--clw-code-header));
