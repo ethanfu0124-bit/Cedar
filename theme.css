@@ -1,6 +1,6 @@
 /*
- * Cedar v0.2.0
- * Warm paper notes with a rounded knowledge workbench.
+ * Cedar v0.3.0
+ * Claude-inspired warm notes — coral accent, warm paper surfaces.
  */
 
 body {
@@ -37,31 +37,31 @@ body {
 }
 
 .theme-light {
-  --clw-shell: #ece7df;
-  --clw-shell-raised: #f4efe7;
-  --clw-paper: #f6f3ee;
-  --clw-card: #f3ede4;
-  --clw-card-strong: #fffaf2;
-  --clw-border: #d8cdc0;
-  --clw-ink: #302b27;
-  --clw-ink-muted: #6d6258;
-  --accent-h: 25;
-  --accent-s: 52%;
-  --accent-l: 53%;
+  --clw-shell: #efece5;
+  --clw-shell-raised: #f5f2eb;
+  --clw-paper: #faf9f7;
+  --clw-card: #f3efe8;
+  --clw-card-strong: #faf8f2;
+  --clw-border: #d4c8b8;
+  --clw-ink: #1a1714;
+  --clw-ink-muted: #6a5e54;
+  --accent-h: 20;
+  --accent-s: 60%;
+  --accent-l: 59%;
   --clw-accent: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
   --clw-accent-hover: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) - 4%));
-  --clw-support: #647a73;
+  --clw-support: #7a8e88;
   --clw-selection: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.22);
   --clw-search: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.28);
-  --clw-shadow: 0 18px 44px rgba(68, 48, 31, 0.14);
-  --clw-shadow-s: 0 1px 3px rgba(68, 48, 31, 0.08);
-  --clw-shadow-m: 0 4px 12px rgba(68, 48, 31, 0.10);
+  --clw-shadow: 0 18px 44px rgba(60, 40, 24, 0.13);
+  --clw-shadow-s: 0 1px 3px rgba(60, 40, 24, 0.07);
+  --clw-shadow-m: 0 4px 12px rgba(60, 40, 24, 0.09);
   --background-primary: var(--clw-paper);
   --background-primary-alt: var(--clw-shell-raised);
   --background-secondary: var(--clw-shell);
   --background-secondary-alt: var(--clw-card);
   --background-modifier-border: var(--clw-border);
-  --background-modifier-hover: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.1);
+  --background-modifier-hover: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.10);
   --background-modifier-active-hover: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.16);
   --background-modifier-form-field: var(--clw-card-strong);
   --interactive-accent: var(--clw-accent);
@@ -69,7 +69,7 @@ body {
   --interactive-accent-hover: var(--clw-accent-hover);
   --text-normal: var(--clw-ink);
   --text-muted: var(--clw-ink-muted);
-  --text-faint: rgba(109, 98, 88, 0.72);
+  --text-faint: rgba(106, 94, 84, 0.72);
   --text-on-accent: var(--clw-card-strong);
   --text-on-accent-inverted: var(--clw-ink);
   --text-accent: var(--clw-accent);
@@ -81,10 +81,10 @@ body {
   --clw-inline-code-bg: color-mix(in srgb, var(--clw-card) 78%, var(--clw-accent));
   --clw-inline-code-border: color-mix(in srgb, var(--clw-border) 56%, var(--clw-accent));
   --clw-inline-code-text: color-mix(in srgb, var(--text-normal) 58%, var(--clw-accent-hover));
-  --clw-highlight: color-mix(in srgb, #edc85d 76%, var(--clw-paper));
-  --clw-quote-bg: color-mix(in srgb, var(--clw-card) 54%, transparent);
+  --clw-highlight: color-mix(in srgb, var(--clw-accent) 26%, var(--clw-paper));
+  --clw-quote-bg: color-mix(in srgb, var(--clw-accent) 6%, transparent);
   --clw-quote-text: color-mix(in srgb, var(--text-normal) 84%, var(--text-muted));
-  --clw-code-surface: color-mix(in srgb, var(--clw-shell-raised) 82%, var(--clw-card-strong));
+  --clw-code-surface: #1c1917;
   --heading-spacing: calc(var(--p-spacing) * 2.18);
   --h1-color: color-mix(in srgb, var(--clw-accent-hover) 58%, var(--text-normal));
   --h2-color: color-mix(in srgb, var(--text-normal) 82%, var(--clw-accent));
@@ -117,23 +117,23 @@ body {
 }
 
 .theme-dark {
-  --clw-shell: #1d1b19;
-  --clw-shell-raised: #24211e;
-  --clw-paper: #272420;
-  --clw-card: #24211e;
-  --clw-card-strong: #322c27;
-  --clw-border: #453b33;
-  --clw-ink: #eee3d5;
-  --clw-ink-muted: #b7a99b;
-  --accent-h: 21;
-  --accent-s: 47%;
-  --accent-l: 59%;
+  --clw-shell: #1c1917;
+  --clw-shell-raised: #272420;
+  --clw-paper: #252119;
+  --clw-card: #2e2a25;
+  --clw-card-strong: #352e28;
+  --clw-border: #42382e;
+  --clw-ink: #ede5d8;
+  --clw-ink-muted: #a09080;
+  --accent-h: 22;
+  --accent-s: 52%;
+  --accent-l: 67%;
   --clw-accent: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
   --clw-accent-hover: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) + 5%));
-  --clw-support: #829993;
+  --clw-support: #8aa8a0;
   --clw-selection: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.28);
   --clw-search: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.34);
-  --clw-shadow: 0 22px 56px rgba(0, 0, 0, 0.38);
+  --clw-shadow: 0 22px 56px rgba(0, 0, 0, 0.36);
   --clw-shadow-s: 0 1px 3px rgba(0, 0, 0, 0.16);
   --clw-shadow-m: 0 4px 12px rgba(0, 0, 0, 0.22);
   --background-primary: var(--clw-paper);
@@ -149,7 +149,7 @@ body {
   --interactive-accent-hover: var(--clw-accent-hover);
   --text-normal: var(--clw-ink);
   --text-muted: var(--clw-ink-muted);
-  --text-faint: rgba(183, 169, 155, 0.72);
+  --text-faint: rgba(160, 144, 128, 0.72);
   --text-on-accent: var(--clw-ink);
   --text-on-accent-inverted: var(--clw-paper);
   --text-accent: var(--clw-accent);
@@ -161,10 +161,10 @@ body {
   --clw-inline-code-bg: color-mix(in srgb, var(--clw-card-strong) 74%, var(--clw-accent));
   --clw-inline-code-border: color-mix(in srgb, var(--clw-border) 54%, var(--clw-accent));
   --clw-inline-code-text: color-mix(in srgb, var(--text-normal) 64%, var(--clw-accent-hover));
-  --clw-highlight: color-mix(in srgb, #946a1d 76%, var(--clw-paper));
-  --clw-quote-bg: color-mix(in srgb, var(--clw-card) 64%, transparent);
+  --clw-highlight: color-mix(in srgb, var(--clw-accent) 30%, var(--clw-paper));
+  --clw-quote-bg: color-mix(in srgb, var(--clw-accent) 8%, transparent);
   --clw-quote-text: color-mix(in srgb, var(--text-normal) 82%, var(--text-muted));
-  --clw-code-surface: color-mix(in srgb, var(--clw-shell-raised) 82%, var(--clw-card-strong));
+  --clw-code-surface: #0f0d0c;
   --heading-spacing: calc(var(--p-spacing) * 2.18);
   --h1-color: color-mix(in srgb, var(--clw-accent-hover) 62%, var(--text-normal));
   --h2-color: color-mix(in srgb, var(--text-normal) 66%, var(--clw-accent));
