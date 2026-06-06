@@ -40,6 +40,8 @@ body {
   font-optical-sizing: auto;
   font-kerning: normal;
   font-variant-ligatures: common-ligatures contextual-ligatures;
+  --nav-indentation-guide-width: 1px;
+  --nav-indentation-guide-color: color-mix(in srgb, var(--clw-border) 75%, transparent);
 }
 
 .theme-light {
@@ -484,6 +486,16 @@ body {
   list-style-type: lower-roman;
 }
 
+/* List marker color by nesting level */
+.markdown-rendered ul > li,
+.markdown-rendered ol > li                { --list-marker-color: var(--clw-accent); }
+.markdown-rendered ul ul > li,
+.markdown-rendered ol ol > li             { --list-marker-color: var(--clw-support); }
+.markdown-rendered ul ul ul > li,
+.markdown-rendered ol ol ol > li          { --list-marker-color: var(--text-muted); }
+.markdown-rendered ul ul ul ul > li,
+.markdown-rendered ol ol ol ol > li       { --list-marker-color: var(--text-faint); }
+
 .markdown-rendered ul ul > li > .list-bullet {
   --list-bullet-radius: 2px;
   --list-bullet-size: 0.34em;
@@ -901,6 +913,44 @@ body .dropdown {
   text-decoration-color: color-mix(in srgb, var(--clw-accent) 50%, transparent);
 }
 
+/* Extended checkbox states */
+.markdown-rendered .task-list-item[data-task="-"] .task-list-item-checkbox {
+  background-color: var(--text-muted);
+  border-color: var(--text-muted);
+  opacity: 0.65;
+}
+.markdown-rendered .task-list-item[data-task="-"] {
+  color: var(--text-muted);
+  text-decoration: line-through;
+  text-decoration-color: color-mix(in srgb, var(--text-muted) 50%, transparent);
+}
+
+.markdown-rendered .task-list-item[data-task=">"] .task-list-item-checkbox,
+.markdown-rendered .task-list-item[data-task="<"] .task-list-item-checkbox {
+  background-color: var(--clw-support);
+  border-color: var(--clw-support);
+}
+
+.markdown-rendered .task-list-item[data-task="!"] .task-list-item-checkbox {
+  background-color: var(--clw-accent);
+  border-color: var(--clw-accent);
+}
+
+.markdown-rendered .task-list-item[data-task="?"] .task-list-item-checkbox {
+  background-color: color-mix(in srgb, var(--clw-accent) 50%, var(--clw-support));
+  border-color: color-mix(in srgb, var(--clw-accent) 50%, var(--clw-support));
+}
+
+.markdown-rendered .task-list-item[data-task="/"] .task-list-item-checkbox {
+  background: linear-gradient(90deg, var(--interactive-accent) 50%, transparent 50%);
+  border-color: var(--interactive-accent);
+}
+
+.markdown-rendered .task-list-item[data-task="*"] .task-list-item-checkbox {
+  background-color: #c4a882;
+  border-color: #c4a882;
+}
+
 /* Narrow layout guardrails */
 @media (max-width: 900px) {
   body {
@@ -961,3 +1011,42 @@ body .dropdown {
 .theme-dark .graph-view.color-line-highlight  { color: var(--clw-accent); }
 .theme-dark .graph-view.color-arrow           { color: var(--clw-accent); }
 .theme-dark .graph-view.color-text            { color: var(--clw-ink-muted); }
+
+/* ─── Canvas ──────────────────────────────────────────────── */
+.canvas-background {
+  background-color: var(--clw-shell);
+}
+
+.canvas-node {
+  border: var(--clw-border-width) solid var(--clw-border);
+  border-radius: var(--clw-radius-m);
+  box-shadow: var(--clw-shadow-s);
+}
+
+.canvas-node.is-focused,
+.canvas-node.is-selected {
+  border-color: var(--clw-accent);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--clw-accent) 22%, transparent), var(--clw-shadow-m);
+}
+
+.canvas-edge path {
+  stroke: var(--clw-border);
+}
+
+.canvas-edge.is-selected path,
+.canvas-edge:hover path {
+  stroke: var(--clw-accent);
+}
+
+/* ─── Math (MathJax / KaTeX) ──────────────────────────────── */
+.math.math-block {
+  background: var(--clw-card-strong);
+  border-radius: var(--clw-radius-m);
+  border: var(--clw-border-width) solid var(--clw-border);
+  padding: var(--size-4-3) var(--size-4-4);
+  overflow-x: auto;
+}
+
+.math.math-inline {
+  color: color-mix(in srgb, var(--clw-accent) 22%, var(--text-normal));
+}
