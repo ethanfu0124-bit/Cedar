@@ -309,11 +309,11 @@ body {
 
 .tag,
 .cm-hashtag {
-  border: var(--clw-border-width) solid var(--clw-border);
+  border: var(--clw-border-width) solid color-mix(in srgb, var(--clw-accent) 28%, var(--clw-border));
   border-radius: var(--clw-radius-s);
-  background: color-mix(in srgb, var(--clw-card-strong) 84%, var(--clw-support));
+  background: color-mix(in srgb, var(--clw-accent) 9%, var(--clw-card-strong));
   box-shadow: var(--clw-shadow-s);
-  color: var(--text-normal);
+  color: color-mix(in srgb, var(--clw-accent-hover) 70%, var(--text-normal));
   padding-inline: 0.42em;
 }
 
@@ -465,8 +465,9 @@ body {
 
 /* Structured note blocks */
 .markdown-rendered blockquote {
-  border-inline-start-color: var(--blockquote-border-color);
-  border-radius: var(--clw-radius-s);
+  border-inline-start: 3px solid var(--clw-accent);
+  border-radius: 0 var(--clw-radius-s) var(--clw-radius-s) 0;
+  background: var(--clw-quote-bg);
   color: var(--blockquote-color);
   padding: var(--size-4-2) var(--size-4-3);
 }
@@ -687,8 +688,8 @@ body {
 }
 
 .metadata-property:hover {
-  border-color: color-mix(in srgb, var(--clw-border) 76%, transparent);
-  background: color-mix(in srgb, var(--background-modifier-hover) 56%, transparent);
+  border-color: color-mix(in srgb, var(--clw-accent) 28%, transparent);
+  background: color-mix(in srgb, var(--clw-accent) 6%, transparent);
 }
 
 .metadata-property-key,
@@ -731,7 +732,7 @@ body {
 }
 
 .markdown-rendered tr:hover td {
-  background: var(--background-modifier-hover);
+  background: color-mix(in srgb, var(--clw-accent) 6%, transparent);
 }
 
 /* Inputs and controls */
@@ -753,7 +754,7 @@ select:focus,
 .search-input-container input:focus,
 .prompt-input:focus {
   border-color: var(--interactive-accent);
-  box-shadow: 0 0 0 2px color-mix(in srgb, var(--interactive-accent) 24%, transparent);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--interactive-accent) 20%, transparent);
 }
 
 button,
@@ -811,6 +812,7 @@ body .dropdown {
 .menu-item.selected,
 .menu-item:hover {
   background: var(--background-modifier-active-hover);
+  color: color-mix(in srgb, var(--clw-accent) 80%, var(--text-normal));
 }
 
 .search-result-file-title,
