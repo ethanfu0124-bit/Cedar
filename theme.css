@@ -93,15 +93,14 @@ body {
   --clw-quote-bg: color-mix(in srgb, var(--clw-accent) 6%, transparent);
   --clw-quote-text: color-mix(in srgb, var(--text-normal) 84%, var(--text-muted));
   --clw-code-surface: #f0ebe3;
-  --clw-code-header: #e4ddd5;
   --clw-code-text: #2a2018;
-  --clw-syntax-keyword: #b84832;
-  --clw-syntax-string: #3d7a58;
-  --clw-syntax-comment: #8a7a6a;
-  --clw-syntax-number: #8a6430;
-  --clw-syntax-var: #3a3028;
+  --clw-syntax-keyword: #b04030;
+  --clw-syntax-string: #356848;
+  --clw-syntax-comment: #6e6058;
+  --clw-syntax-number: #7e5a28;
+  --clw-syntax-var: #3a6058;
   --clw-syntax-type: #6050a0;
-  --clw-syntax-operator: #7a6a5a;
+  --clw-syntax-operator: #6e5e50;
   --heading-spacing: calc(var(--p-spacing) * 2.18);
   --h1-color: color-mix(in srgb, var(--clw-accent-hover) 58%, var(--text-normal));
   --h2-color: color-mix(in srgb, var(--text-normal) 82%, var(--clw-accent));
@@ -184,11 +183,10 @@ body {
   --clw-quote-bg: color-mix(in srgb, var(--clw-accent) 8%, transparent);
   --clw-quote-text: color-mix(in srgb, var(--text-normal) 82%, var(--text-muted));
   --clw-code-surface: #0f0d0c;
-  --clw-code-header: #1e1a16;
   --clw-code-text: #e8ddd0;
   --clw-syntax-keyword: #e8956a;
   --clw-syntax-string: #a8c4a0;
-  --clw-syntax-comment: #5a5048;
+  --clw-syntax-comment: #907a70;
   --clw-syntax-number: #c4a882;
   --clw-syntax-var: #d4c8b0;
   --clw-syntax-type: #b8a8e0;
@@ -643,14 +641,14 @@ body {
 
 
 .markdown-rendered pre .copy-code-button {
-  background: color-mix(in srgb, var(--clw-border) 30%, var(--clw-code-header));
+  background: color-mix(in srgb, var(--clw-code-text) 50%, var(--clw-code-surface));
   color: var(--clw-ink-muted);
   border-radius: var(--clw-radius-s);
   border: none;
 }
 
 .markdown-rendered pre .copy-code-button:hover {
-  background: color-mix(in srgb, var(--clw-border) 50%, var(--clw-code-header));
+  background: color-mix(in srgb, var(--clw-code-text) 65%, var(--clw-code-surface));
   color: var(--clw-code-text);
 }
 
@@ -665,9 +663,10 @@ body {
 .cm-line.HyperMD-codeblock-end {
   font-size: 1em;
   color: var(--clw-ink-muted);
+  background: color-mix(in srgb, var(--clw-code-surface) 88%, var(--clw-border));
 }
 
-/* Syntax highlight tokens — resolve per theme via variables */
+/* Syntax highlight tokens — edit mode (CodeMirror) */
 .HyperMD-codeblock .cm-keyword      { color: var(--clw-syntax-keyword); }
 .HyperMD-codeblock .cm-string       { color: var(--clw-syntax-string); }
 .HyperMD-codeblock .cm-comment      { color: var(--clw-syntax-comment); }
@@ -675,6 +674,22 @@ body {
 .HyperMD-codeblock .cm-variableName { color: var(--clw-syntax-var); }
 .HyperMD-codeblock .cm-typeName     { color: var(--clw-syntax-type); }
 .HyperMD-codeblock .cm-operator     { color: var(--clw-syntax-operator); }
+
+/* Syntax highlight tokens — reading mode (Prism) */
+.markdown-rendered pre code .token.keyword,
+.markdown-rendered pre code .token.atrule         { color: var(--clw-syntax-keyword); }
+.markdown-rendered pre code .token.string,
+.markdown-rendered pre code .token.attr-value     { color: var(--clw-syntax-string); }
+.markdown-rendered pre code .token.comment,
+.markdown-rendered pre code .token.prolog,
+.markdown-rendered pre code .token.cdata          { color: var(--clw-syntax-comment); }
+.markdown-rendered pre code .token.number         { color: var(--clw-syntax-number); }
+.markdown-rendered pre code .token.variable,
+.markdown-rendered pre code .token.constant       { color: var(--clw-syntax-var); }
+.markdown-rendered pre code .token.class-name,
+.markdown-rendered pre code .token.function       { color: var(--clw-syntax-type); }
+.markdown-rendered pre code .token.operator,
+.markdown-rendered pre code .token.punctuation    { color: var(--clw-syntax-operator); }
 
 /* Images */
 .markdown-rendered img {
