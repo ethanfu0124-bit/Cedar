@@ -93,7 +93,7 @@ body {
   --clw-quote-bg: color-mix(in srgb, var(--clw-accent) 6%, transparent);
   --clw-quote-text: color-mix(in srgb, var(--text-normal) 84%, var(--text-muted));
   --clw-code-surface: #1c1917;
-  --clw-code-header: #2a2420;
+  --clw-code-header: #383028;
   --heading-spacing: calc(var(--p-spacing) * 2.18);
   --h1-color: color-mix(in srgb, var(--clw-accent-hover) 58%, var(--text-normal));
   --h2-color: color-mix(in srgb, var(--text-normal) 82%, var(--clw-accent));
@@ -176,7 +176,7 @@ body {
   --clw-quote-bg: color-mix(in srgb, var(--clw-accent) 8%, transparent);
   --clw-quote-text: color-mix(in srgb, var(--text-normal) 82%, var(--text-muted));
   --clw-code-surface: #0f0d0c;
-  --clw-code-header: #161210;
+  --clw-code-header: #1e1a16;
   --heading-spacing: calc(var(--p-spacing) * 2.18);
   --h1-color: color-mix(in srgb, var(--clw-accent-hover) 62%, var(--text-normal));
   --h2-color: color-mix(in srgb, var(--text-normal) 66%, var(--clw-accent));
@@ -638,6 +638,58 @@ body {
   line-height: 1.7;
   font-size: 0.875em;
 }
+
+/* Language label in reading-mode header bar */
+.markdown-rendered pre:has(code[class*="language-"])::before {
+  content: "</>";
+  position: absolute;
+  top: 0;
+  left: var(--size-4-3);
+  height: 36px;
+  line-height: 36px;
+  color: #6a5e54;
+  font-size: 0.72em;
+  font-family: ui-monospace, monospace;
+  letter-spacing: 0.04em;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Override with human-readable language names */
+.markdown-rendered pre:has(code.language-python)::before,
+.markdown-rendered pre:has(code.language-py)::before     { content: "Python"; }
+.markdown-rendered pre:has(code.language-javascript)::before,
+.markdown-rendered pre:has(code.language-js)::before     { content: "JavaScript"; }
+.markdown-rendered pre:has(code.language-typescript)::before,
+.markdown-rendered pre:has(code.language-ts)::before     { content: "TypeScript"; }
+.markdown-rendered pre:has(code.language-css)::before    { content: "CSS"; }
+.markdown-rendered pre:has(code.language-html)::before   { content: "HTML"; }
+.markdown-rendered pre:has(code.language-json)::before   { content: "JSON"; }
+.markdown-rendered pre:has(code.language-bash)::before,
+.markdown-rendered pre:has(code.language-sh)::before,
+.markdown-rendered pre:has(code.language-shell)::before  { content: "Shell"; }
+.markdown-rendered pre:has(code.language-yaml)::before,
+.markdown-rendered pre:has(code.language-yml)::before    { content: "YAML"; }
+.markdown-rendered pre:has(code.language-markdown)::before,
+.markdown-rendered pre:has(code.language-md)::before     { content: "Markdown"; }
+.markdown-rendered pre:has(code.language-rust)::before,
+.markdown-rendered pre:has(code.language-rs)::before     { content: "Rust"; }
+.markdown-rendered pre:has(code.language-go)::before     { content: "Go"; }
+.markdown-rendered pre:has(code.language-java)::before   { content: "Java"; }
+.markdown-rendered pre:has(code.language-cpp)::before,
+.markdown-rendered pre:has(code.language-c\\+\\+)::before { content: "C++"; }
+.markdown-rendered pre:has(code.language-c)::before      { content: "C"; }
+.markdown-rendered pre:has(code.language-sql)::before    { content: "SQL"; }
+.markdown-rendered pre:has(code.language-ruby)::before,
+.markdown-rendered pre:has(code.language-rb)::before     { content: "Ruby"; }
+.markdown-rendered pre:has(code.language-php)::before    { content: "PHP"; }
+.markdown-rendered pre:has(code.language-swift)::before  { content: "Swift"; }
+.markdown-rendered pre:has(code.language-kotlin)::before { content: "Kotlin"; }
+.markdown-rendered pre:has(code.language-r)::before      { content: "R"; }
+.markdown-rendered pre:has(code.language-lua)::before    { content: "Lua"; }
+.markdown-rendered pre:has(code.language-toml)::before   { content: "TOML"; }
+.markdown-rendered pre:has(code.language-xml)::before    { content: "XML"; }
+.markdown-rendered pre:has(code.language-diff)::before   { content: "Diff"; }
 
 .markdown-rendered pre .copy-code-button {
   background: rgba(255, 255, 255, 0.08);
