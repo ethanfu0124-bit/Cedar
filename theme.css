@@ -549,17 +549,63 @@ body {
 .callout[data-callout="tldr"]                                          { --callout-color: 96, 144, 160; }
 .callout[data-callout="todo"]                                          { --callout-color: 217, 119, 87; }
 
+/* Code blocks — dark surface in both light and dark mode */
 .markdown-rendered pre,
 .HyperMD-codeblock {
-  border: var(--clw-border-width) solid color-mix(in srgb, var(--clw-border) 84%, var(--clw-support));
+  border: var(--clw-border-width) solid color-mix(in srgb, var(--clw-code-surface) 60%, var(--clw-border));
   border-radius: var(--clw-radius-m);
   background: var(--clw-code-surface);
 }
 
 .markdown-rendered pre {
   overflow-x: auto;
-  padding: var(--size-4-4);
+  padding: 0;
 }
+
+.markdown-rendered pre code {
+  display: block;
+  color: #e8ddd0;
+  padding: var(--size-4-4);
+  line-height: 1.7;
+}
+
+/* Language label and copy button bar */
+.markdown-rendered pre:has(code[class*="language-"]) {
+  position: relative;
+}
+
+.copy-code-button {
+  background: rgba(255, 255, 255, 0.08) !important;
+  color: #a09080 !important;
+  border-radius: var(--clw-radius-s) !important;
+  border: none !important;
+}
+
+.copy-code-button:hover {
+  background: rgba(255, 255, 255, 0.14) !important;
+  color: #e8ddd0 !important;
+}
+
+/* Edit mode code blocks */
+.HyperMD-codeblock {
+  color: #e8ddd0;
+  padding-inline: var(--size-4-4);
+}
+
+.cm-line.HyperMD-codeblock-begin,
+.cm-line.HyperMD-codeblock-end {
+  color: var(--clw-ink-muted);
+  background: color-mix(in srgb, var(--clw-code-surface) 80%, var(--clw-shell));
+}
+
+/* Syntax highlight tokens on dark surface */
+.HyperMD-codeblock .cm-keyword     { color: #e8956a; }
+.HyperMD-codeblock .cm-string      { color: #a8c4a0; }
+.HyperMD-codeblock .cm-comment     { color: #5a5048; }
+.HyperMD-codeblock .cm-number      { color: #c4a882; }
+.HyperMD-codeblock .cm-variableName { color: #d4c8b0; }
+.HyperMD-codeblock .cm-typeName    { color: #b8a8e0; }
+.HyperMD-codeblock .cm-operator    { color: #a09080; }
 
 .metadata-container {
   border: var(--clw-border-width) solid var(--clw-border);
