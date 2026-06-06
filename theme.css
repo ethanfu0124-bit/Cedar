@@ -22,7 +22,7 @@ body {
   --list-marker-color: color-mix(in srgb, var(--clw-support) 54%, var(--text-muted));
   --list-marker-color-hover: color-mix(in srgb, var(--clw-support) 68%, var(--text-normal));
   --blockquote-border-thickness: 3px;
-  --blockquote-border-color: var(--clw-support);
+  --blockquote-border-color: var(--clw-accent);
   --blockquote-background-color: var(--clw-quote-bg);
   --blockquote-color: var(--clw-quote-text);
   --callout-border-width: var(--clw-border-width);
@@ -171,7 +171,7 @@ body {
   --clw-inline-code-bg: color-mix(in srgb, var(--clw-card-strong) 74%, var(--clw-accent));
   --clw-inline-code-border: color-mix(in srgb, var(--clw-border) 54%, var(--clw-accent));
   --clw-inline-code-text: color-mix(in srgb, var(--text-normal) 64%, var(--clw-accent-hover));
-  --clw-highlight: color-mix(in srgb, var(--clw-accent) 30%, var(--clw-paper));
+  --clw-highlight: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.22);
   --clw-quote-bg: color-mix(in srgb, var(--clw-accent) 8%, transparent);
   --clw-quote-text: color-mix(in srgb, var(--text-normal) 82%, var(--text-muted));
   --clw-code-surface: #0f0d0c;
@@ -407,8 +407,8 @@ body {
   padding: 0.12em 0.24em;
 }
 
-/* Fade backtick delimiters so they recede visually */
-.markdown-source-view.mod-cm6 .cm-formatting-code {
+/* Fade backtick delimiters — raise specificity to beat .cm-inline-code at equal specificity */
+.markdown-source-view.mod-cm6 .cm-inline-code.cm-formatting-code {
   color: var(--text-faint);
 }
 
@@ -513,9 +513,9 @@ body {
 
 /* Structured note blocks */
 .markdown-rendered blockquote {
-  border-inline-start: 3px solid var(--clw-accent);
+  border-inline-start: 3px solid var(--blockquote-border-color);
   border-radius: 0 var(--clw-radius-s) var(--clw-radius-s) 0;
-  background: var(--clw-quote-bg);
+  background: var(--blockquote-background-color);
   color: var(--blockquote-color);
   padding: var(--size-4-2) var(--size-4-3);
 }
@@ -554,7 +554,6 @@ body {
 .callout-icon svg {
   width: 12px;
   height: 12px;
-  stroke: white;
   color: white;
 }
 
@@ -611,6 +610,10 @@ body {
   padding: 0;
 }
 
+.markdown-rendered pre:not(:has(code)) {
+  padding: var(--size-4-4);
+}
+
 .markdown-rendered pre code {
   display: block;
   color: #e8ddd0;
@@ -624,16 +627,16 @@ body {
   position: relative;
 }
 
-.copy-code-button {
-  background: rgba(255, 255, 255, 0.08) !important;
-  color: #a09080 !important;
-  border-radius: var(--clw-radius-s) !important;
-  border: none !important;
+.markdown-rendered pre .copy-code-button {
+  background: rgba(255, 255, 255, 0.08);
+  color: #a09080;
+  border-radius: var(--clw-radius-s);
+  border: none;
 }
 
-.copy-code-button:hover {
-  background: rgba(255, 255, 255, 0.14) !important;
-  color: #e8ddd0 !important;
+.markdown-rendered pre .copy-code-button:hover {
+  background: rgba(255, 255, 255, 0.14);
+  color: #e8ddd0;
 }
 
 /* Edit mode code blocks */
@@ -645,6 +648,7 @@ body {
 
 .cm-line.HyperMD-codeblock-begin,
 .cm-line.HyperMD-codeblock-end {
+  font-size: 1em;
   color: var(--clw-ink-muted);
   background: color-mix(in srgb, var(--clw-code-surface) 80%, var(--clw-shell));
 }
@@ -987,30 +991,18 @@ body .dropdown {
   background: var(--clw-ink-muted);
 }
 
-/* Graph view — Claude palette */
-.theme-light .graph-view.color-fill            { color: var(--clw-ink-muted); }
-.theme-light .graph-view.color-fill-focused    { color: var(--clw-accent); }
-.theme-light .graph-view.color-fill-tag        { color: var(--clw-support); }
-.theme-light .graph-view.color-fill-attachment { color: color-mix(in srgb, var(--clw-accent) 60%, var(--clw-support)); }
-.theme-light .graph-view.color-fill-unresolved { color: color-mix(in srgb, var(--clw-border) 70%, transparent); }
-.theme-light .graph-view.color-fill-highlight  { color: color-mix(in srgb, var(--clw-accent) 80%, transparent); }
-.theme-light .graph-view.color-circle          { color: var(--clw-border); }
-.theme-light .graph-view.color-line            { color: color-mix(in srgb, var(--clw-border) 70%, transparent); }
-.theme-light .graph-view.color-line-highlight  { color: var(--clw-accent); }
-.theme-light .graph-view.color-arrow           { color: var(--clw-accent); }
-.theme-light .graph-view.color-text            { color: var(--clw-ink-muted); }
-
-.theme-dark .graph-view.color-fill            { color: var(--clw-ink-muted); }
-.theme-dark .graph-view.color-fill-focused    { color: var(--clw-accent); }
-.theme-dark .graph-view.color-fill-tag        { color: var(--clw-support); }
-.theme-dark .graph-view.color-fill-attachment { color: color-mix(in srgb, var(--clw-accent) 60%, var(--clw-support)); }
-.theme-dark .graph-view.color-fill-unresolved { color: color-mix(in srgb, var(--clw-border) 70%, transparent); }
-.theme-dark .graph-view.color-fill-highlight  { color: color-mix(in srgb, var(--clw-accent) 80%, transparent); }
-.theme-dark .graph-view.color-circle          { color: var(--clw-border); }
-.theme-dark .graph-view.color-line            { color: color-mix(in srgb, var(--clw-border) 70%, transparent); }
-.theme-dark .graph-view.color-line-highlight  { color: var(--clw-accent); }
-.theme-dark .graph-view.color-arrow           { color: var(--clw-accent); }
-.theme-dark .graph-view.color-text            { color: var(--clw-ink-muted); }
+/* Graph view — Claude palette; all values use per-theme custom props, no duplication needed */
+.graph-view.color-fill            { color: var(--clw-ink-muted); }
+.graph-view.color-fill-focused    { color: var(--clw-accent); }
+.graph-view.color-fill-tag        { color: var(--clw-support); }
+.graph-view.color-fill-attachment { color: color-mix(in srgb, var(--clw-accent) 60%, var(--clw-support)); }
+.graph-view.color-fill-unresolved { color: color-mix(in srgb, var(--clw-border) 70%, transparent); }
+.graph-view.color-fill-highlight  { color: color-mix(in srgb, var(--clw-accent) 80%, transparent); }
+.graph-view.color-circle          { color: var(--clw-border); }
+.graph-view.color-line            { color: color-mix(in srgb, var(--clw-border) 70%, transparent); }
+.graph-view.color-line-highlight  { color: var(--clw-accent); }
+.graph-view.color-arrow           { color: var(--clw-accent); }
+.graph-view.color-text            { color: var(--clw-ink-muted); }
 
 /* ─── Canvas ──────────────────────────────────────────────── */
 .canvas-background {
@@ -1041,6 +1033,7 @@ body .dropdown {
 /* ─── Math (MathJax / KaTeX) ──────────────────────────────── */
 .math.math-block {
   overflow-x: auto;
+  word-break: normal;
 }
 
 .math.math-inline {
