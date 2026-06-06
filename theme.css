@@ -235,7 +235,7 @@ body {
 
 .workspace-tab-header.is-active {
   background: var(--clw-card-strong);
-  box-shadow: var(--clw-shadow-m);
+  box-shadow: inset 0 -2px 0 var(--clw-accent), var(--clw-shadow-m);
   color: var(--text-normal);
 }
 
@@ -253,6 +253,18 @@ body {
   border-radius: var(--clw-radius-s);
 }
 
+.workspace-ribbon .side-dock-ribbon-action:hover,
+.workspace-ribbon .clickable-icon:hover {
+  color: var(--clw-accent);
+  background: var(--background-modifier-hover);
+}
+
+.workspace-ribbon .side-dock-ribbon-action.is-active,
+.workspace-ribbon .side-dock-ribbon-action[aria-expanded="true"],
+.workspace-ribbon .clickable-icon.is-active {
+  color: var(--clw-accent);
+}
+
 .nav-file-title,
 .nav-folder-title,
 .tree-item-self {
@@ -262,7 +274,7 @@ body {
 .nav-file-title.is-active,
 .tree-item-self.is-active {
   background: var(--background-modifier-active-hover);
-  color: var(--text-normal);
+  color: var(--text-accent);
 }
 
 .nav-folder-title:not(.is-active):hover,
@@ -855,7 +867,7 @@ body .dropdown {
 .markdown-rendered .task-list-item.is-checked {
   color: var(--text-muted);
   text-decoration: line-through;
-  text-decoration-color: color-mix(in srgb, var(--text-muted) 60%, transparent);
+  text-decoration-color: color-mix(in srgb, var(--clw-accent) 50%, transparent);
 }
 
 /* Narrow layout guardrails */
