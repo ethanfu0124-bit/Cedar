@@ -615,10 +615,10 @@ body {
 .callout[data-callout="tldr"]                                          { --callout-color: 96, 144, 160; }
 .callout[data-callout="todo"]                                          { --callout-color: 217, 119, 87; }
 
-/* Code blocks — dark surface in both light and dark mode */
+/* Code blocks */
 .markdown-rendered pre,
 .HyperMD-codeblock {
-  border: var(--clw-border-width) solid var(--clw-code-header);
+  border: var(--clw-border-width) solid var(--clw-border);
   border-radius: var(--clw-radius-m);
   background: var(--clw-code-surface);
 }
@@ -629,19 +629,6 @@ body {
   position: relative;
 }
 
-/* Header bar: two-tone gradient synced with edit-mode fence-delimiter color.
-   Background stays fixed to the element's top edge even when scrolling horizontally. */
-.markdown-rendered pre:has(code) {
-  background: linear-gradient(
-    to bottom,
-    var(--clw-code-header) 0px,
-    var(--clw-code-header) 35px,
-    color-mix(in srgb, var(--clw-border) 14%, var(--clw-code-surface)) 35px,
-    color-mix(in srgb, var(--clw-border) 14%, var(--clw-code-surface)) 36px,
-    var(--clw-code-surface) 36px
-  );
-}
-
 .markdown-rendered pre:not(:has(code)) {
   padding: var(--size-4-4);
 }
@@ -650,7 +637,6 @@ body {
   display: block;
   color: var(--clw-code-text);
   padding: var(--size-4-4);
-  padding-top: calc(36px + var(--size-4-4));
   line-height: 1.7;
   font-size: 0.875em;
 }
@@ -679,7 +665,6 @@ body {
 .cm-line.HyperMD-codeblock-end {
   font-size: 1em;
   color: var(--clw-ink-muted);
-  background: var(--clw-code-header);
 }
 
 /* Syntax highlight tokens — resolve per theme via variables */
