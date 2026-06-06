@@ -471,28 +471,83 @@ body {
   padding: var(--size-4-2) var(--size-4-3);
 }
 
+/* Callout — left stripe + badge icon */
 .callout {
-  border: var(--clw-border-width) solid color-mix(in srgb, rgb(var(--callout-color)) 44%, var(--clw-border));
+  border-left: 4px solid rgb(var(--callout-color));
+  border-top: var(--clw-border-width) solid color-mix(in srgb, rgb(var(--callout-color)) 38%, var(--clw-border));
+  border-right: var(--clw-border-width) solid color-mix(in srgb, rgb(var(--callout-color)) 38%, var(--clw-border));
+  border-bottom: var(--clw-border-width) solid color-mix(in srgb, rgb(var(--callout-color)) 38%, var(--clw-border));
   border-radius: var(--clw-radius-m);
-  background: color-mix(in srgb, rgb(var(--callout-color)) 11%, var(--clw-card-strong));
-  box-shadow: inset 0 1px 0 color-mix(in srgb, rgb(var(--callout-color)) 11%, transparent);
+  background: color-mix(in srgb, rgb(var(--callout-color)) 7%, var(--clw-card-strong));
+  box-shadow: none;
 }
 
 .callout-title {
-  border-radius: var(--clw-radius-s);
-  background: color-mix(in srgb, rgb(var(--callout-color)) 13%, transparent);
-  color: color-mix(in srgb, rgb(var(--callout-color)) 70%, var(--text-normal));
+  background: transparent;
+  color: color-mix(in srgb, rgb(var(--callout-color)) 80%, var(--text-normal));
   gap: var(--size-4-2);
   padding: var(--size-4-2) var(--size-4-3);
 }
 
 .callout-icon {
-  color: rgb(var(--callout-color));
+  background: rgb(var(--callout-color));
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3px;
+  color: white;
+}
+
+.callout-icon svg {
+  width: 12px;
+  height: 12px;
+  stroke: white;
+  color: white;
 }
 
 .callout-content {
   color: var(--text-normal);
+  padding: var(--size-4-2) var(--size-4-3) var(--size-4-3);
 }
+
+/* Claude-specific callout types */
+.callout[data-callout="thinking"] { --callout-color: 217, 119, 87; }
+.callout[data-callout="prompt"]   { --callout-color: 100, 155, 145; }
+.callout[data-callout="context"]  { --callout-color: 192, 154, 64; }
+.callout[data-callout="response"] { --callout-color: 122, 170, 128; }
+.callout[data-callout="artifact"] { --callout-color: 138, 120, 192; }
+
+/* Standard callout type color overrides — warmed to Claude palette */
+.callout[data-callout="note"]                                          { --callout-color: 192, 120, 72; }
+.callout[data-callout="info"]                                          { --callout-color: 90, 144, 144; }
+.callout[data-callout="tip"],
+.callout[data-callout="hint"]                                          { --callout-color: 106, 170, 114; }
+.callout[data-callout="success"],
+.callout[data-callout="check"],
+.callout[data-callout="done"]                                          { --callout-color: 106, 170, 114; }
+.callout[data-callout="warning"],
+.callout[data-callout="caution"],
+.callout[data-callout="attention"]                                     { --callout-color: 192, 136, 64; }
+.callout[data-callout="failure"],
+.callout[data-callout="fail"],
+.callout[data-callout="missing"]                                       { --callout-color: 176, 80, 80; }
+.callout[data-callout="danger"],
+.callout[data-callout="error"]                                         { --callout-color: 184, 88, 88; }
+.callout[data-callout="bug"]                                           { --callout-color: 160, 96, 112; }
+.callout[data-callout="example"]                                       { --callout-color: 176, 120, 72; }
+.callout[data-callout="quote"],
+.callout[data-callout="cite"]                                          { --callout-color: 138, 138, 160; }
+.callout[data-callout="question"],
+.callout[data-callout="faq"],
+.callout[data-callout="help"]                                          { --callout-color: 184, 136, 64; }
+.callout[data-callout="abstract"],
+.callout[data-callout="summary"],
+.callout[data-callout="tldr"]                                          { --callout-color: 96, 144, 160; }
+.callout[data-callout="todo"]                                          { --callout-color: 217, 119, 87; }
 
 .markdown-rendered pre,
 .HyperMD-codeblock {
