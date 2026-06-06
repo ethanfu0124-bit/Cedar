@@ -92,8 +92,16 @@ body {
   --clw-highlight: color-mix(in srgb, var(--clw-accent) 26%, var(--clw-paper));
   --clw-quote-bg: color-mix(in srgb, var(--clw-accent) 6%, transparent);
   --clw-quote-text: color-mix(in srgb, var(--text-normal) 84%, var(--text-muted));
-  --clw-code-surface: #1c1917;
-  --clw-code-header: #383028;
+  --clw-code-surface: #f0ebe3;
+  --clw-code-header: #e4ddd5;
+  --clw-code-text: #2a2018;
+  --clw-syntax-keyword: #b84832;
+  --clw-syntax-string: #3d7a58;
+  --clw-syntax-comment: #8a7a6a;
+  --clw-syntax-number: #8a6430;
+  --clw-syntax-var: #3a3028;
+  --clw-syntax-type: #6050a0;
+  --clw-syntax-operator: #7a6a5a;
   --heading-spacing: calc(var(--p-spacing) * 2.18);
   --h1-color: color-mix(in srgb, var(--clw-accent-hover) 58%, var(--text-normal));
   --h2-color: color-mix(in srgb, var(--text-normal) 82%, var(--clw-accent));
@@ -177,6 +185,14 @@ body {
   --clw-quote-text: color-mix(in srgb, var(--text-normal) 82%, var(--text-muted));
   --clw-code-surface: #0f0d0c;
   --clw-code-header: #1e1a16;
+  --clw-code-text: #e8ddd0;
+  --clw-syntax-keyword: #e8956a;
+  --clw-syntax-string: #a8c4a0;
+  --clw-syntax-comment: #5a5048;
+  --clw-syntax-number: #c4a882;
+  --clw-syntax-var: #d4c8b0;
+  --clw-syntax-type: #b8a8e0;
+  --clw-syntax-operator: #a09080;
   --heading-spacing: calc(var(--p-spacing) * 2.18);
   --h1-color: color-mix(in srgb, var(--clw-accent-hover) 62%, var(--text-normal));
   --h2-color: color-mix(in srgb, var(--text-normal) 66%, var(--clw-accent));
@@ -632,27 +648,28 @@ body {
 
 .markdown-rendered pre code {
   display: block;
-  color: #e8ddd0;
+  color: var(--clw-code-text);
   padding: var(--size-4-4);
-  padding-top: calc(36px + var(--size-4-4));
   line-height: 1.7;
   font-size: 0.875em;
 }
 
 /* Language label in reading-mode header bar */
+/* Language label: in-flow block that occupies the header row, sticky on the
+   left edge so it stays visible when the code scrolls horizontally. */
 .markdown-rendered pre:has(code[class*="language-"])::before {
   content: "</>";
-  position: absolute;
-  top: 0;
+  display: block;
+  position: sticky;
   left: var(--size-4-3);
+  width: max-content;
   height: 36px;
   line-height: 36px;
-  color: #6a5e54;
+  color: var(--clw-ink-muted);
   font-size: 0.72em;
   font-family: ui-monospace, monospace;
   letter-spacing: 0.04em;
   pointer-events: none;
-  z-index: 1;
 }
 
 /* Override with human-readable language names */
@@ -692,20 +709,20 @@ body {
 .markdown-rendered pre:has(code.language-diff)::before   { content: "Diff"; }
 
 .markdown-rendered pre .copy-code-button {
-  background: rgba(255, 255, 255, 0.08);
-  color: #a09080;
+  background: color-mix(in srgb, var(--clw-border) 30%, var(--clw-code-header));
+  color: var(--clw-ink-muted);
   border-radius: var(--clw-radius-s);
   border: none;
 }
 
 .markdown-rendered pre .copy-code-button:hover {
-  background: rgba(255, 255, 255, 0.14);
-  color: #e8ddd0;
+  background: color-mix(in srgb, var(--clw-border) 50%, var(--clw-code-header));
+  color: var(--clw-code-text);
 }
 
 /* Edit mode code blocks */
 .HyperMD-codeblock {
-  color: #e8ddd0;
+  color: var(--clw-code-text);
   padding-inline: var(--size-4-4);
   font-size: 0.875em;
 }
@@ -717,14 +734,14 @@ body {
   background: var(--clw-code-header);
 }
 
-/* Syntax highlight tokens on dark surface */
-.HyperMD-codeblock .cm-keyword     { color: #e8956a; }
-.HyperMD-codeblock .cm-string      { color: #a8c4a0; }
-.HyperMD-codeblock .cm-comment     { color: #5a5048; }
-.HyperMD-codeblock .cm-number      { color: #c4a882; }
-.HyperMD-codeblock .cm-variableName { color: #d4c8b0; }
-.HyperMD-codeblock .cm-typeName    { color: #b8a8e0; }
-.HyperMD-codeblock .cm-operator    { color: #a09080; }
+/* Syntax highlight tokens — resolve per theme via variables */
+.HyperMD-codeblock .cm-keyword      { color: var(--clw-syntax-keyword); }
+.HyperMD-codeblock .cm-string       { color: var(--clw-syntax-string); }
+.HyperMD-codeblock .cm-comment      { color: var(--clw-syntax-comment); }
+.HyperMD-codeblock .cm-number       { color: var(--clw-syntax-number); }
+.HyperMD-codeblock .cm-variableName { color: var(--clw-syntax-var); }
+.HyperMD-codeblock .cm-typeName     { color: var(--clw-syntax-type); }
+.HyperMD-codeblock .cm-operator     { color: var(--clw-syntax-operator); }
 
 /* Images */
 .markdown-rendered img {
