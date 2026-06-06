@@ -32,8 +32,9 @@ Callout 使用左侧竖条 + 圆形徽章图标设计，所有标准类型均已
 - 多级有序列表：decimal → lower-alpha → lower-roman 自动切换。
 
 **代码**
-- 代码块：浅色模式暖纸底色，深色模式深色面板；语法高亮颜色在编辑与阅读模式下保持一致。
-- 语法高亮：关键字珊瑚橙，字符串暖绿，注释退色，变量名暖米色。
+- 代码块：浅色模式暖纸底色，深色模式深色面板；复制按钮在两种模式下均清晰可见。
+- 语法高亮：关键字珊瑚橙，字符串暖绿，注释淡灰，变量名松绿；所有色值符合 WCAG AA 对比度标准。
+- 编辑与阅读模式语法高亮保持一致（同时接管 CodeMirror 与 Prism 着色）。
 - 行内代码：珊瑚底色 + 细边框；编辑模式下定界符独立渲染，视觉干净。
 
 **结构元素**
@@ -66,7 +67,7 @@ Callout 使用左侧竖条 + 圆形徽章图标设计，所有标准类型均已
 
 ## 版本
 
-**v0.3.0** — Claude-inspired redesign
+**v0.3.1** — Contrast & consistency pass: WCAG AA syntax colors, Prism reading-mode parity, visible copy button
 
 ## 视觉检查
 
