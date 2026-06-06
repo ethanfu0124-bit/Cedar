@@ -1046,15 +1046,11 @@ body .dropdown {
   padding: var(--size-4-3) var(--size-4-4);
   word-break: normal;
   overflow-wrap: normal;
-}
-
-/* Scroll wide formulas on the inner container — keeps MathJax
-   baseline-adjustment margins from being clipped by a BFC on the <p> */
-.math.math-block mjx-container[display="true"] {
-  overflow-x: auto;
-  overflow-y: visible;
-  display: block;
+  /* Shrink card to formula width so the left border doesn't float as a bracket */
+  width: max-content;
   max-width: 100%;
+  margin-inline: auto;
+  overflow-x: auto;
 }
 
 .math.math-inline {
