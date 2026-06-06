@@ -602,7 +602,7 @@ body {
 /* Code blocks — dark surface in both light and dark mode */
 .markdown-rendered pre,
 .HyperMD-codeblock {
-  border: var(--clw-border-width) solid color-mix(in srgb, var(--clw-code-surface) 60%, var(--clw-border));
+  border: var(--clw-border-width) solid var(--clw-code-header);
   border-radius: var(--clw-radius-m);
   background: var(--clw-code-surface);
 }
@@ -610,6 +610,20 @@ body {
 .markdown-rendered pre {
   overflow-x: auto;
   padding: 0;
+  position: relative;
+}
+
+/* Header bar: two-tone gradient synced with edit-mode fence-delimiter color.
+   Background stays fixed to the element's top edge even when scrolling horizontally. */
+.markdown-rendered pre:has(code) {
+  background: linear-gradient(
+    to bottom,
+    var(--clw-code-header) 0px,
+    var(--clw-code-header) 35px,
+    color-mix(in srgb, var(--clw-border) 14%, var(--clw-code-surface)) 35px,
+    color-mix(in srgb, var(--clw-border) 14%, var(--clw-code-surface)) 36px,
+    var(--clw-code-surface) 36px
+  );
 }
 
 .markdown-rendered pre:not(:has(code)) {
@@ -620,13 +634,9 @@ body {
   display: block;
   color: #e8ddd0;
   padding: var(--size-4-4);
+  padding-top: calc(36px + var(--size-4-4));
   line-height: 1.7;
   font-size: 0.875em;
-}
-
-/* Language label and copy button bar */
-.markdown-rendered pre:has(code[class*="language-"]) {
-  position: relative;
 }
 
 .markdown-rendered pre .copy-code-button {
