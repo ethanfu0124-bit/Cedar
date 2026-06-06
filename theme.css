@@ -891,3 +891,28 @@ body .dropdown {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--clw-ink-muted);
 }
+
+/* Graph view — Claude palette */
+.theme-light .graph-view.color-fill            { color: var(--clw-ink-muted); }
+.theme-light .graph-view.color-fill-focused    { color: var(--clw-accent); }
+.theme-light .graph-view.color-fill-tag        { color: var(--clw-support); }
+.theme-light .graph-view.color-fill-attachment { color: color-mix(in srgb, var(--clw-accent) 60%, var(--clw-support)); }
+.theme-light .graph-view.color-fill-unresolved { color: color-mix(in srgb, var(--clw-border) 70%, transparent); }
+.theme-light .graph-view.color-fill-highlight  { color: color-mix(in srgb, var(--clw-accent) 80%, transparent); }
+.theme-light .graph-view.color-circle          { color: var(--clw-border); }
+.theme-light .graph-view.color-line            { color: color-mix(in srgb, var(--clw-border) 70%, transparent); }
+.theme-light .graph-view.color-line-highlight  { color: var(--clw-accent); }
+.theme-light .graph-view.color-arrow           { color: var(--clw-accent); }
+.theme-light .graph-view.color-text            { color: var(--clw-ink-muted); }
+
+.theme-dark .graph-view.color-fill            { color: var(--clw-ink-muted); }
+.theme-dark .graph-view.color-fill-focused    { color: var(--clw-accent); }
+.theme-dark .graph-view.color-fill-tag        { color: var(--clw-support); }
+.theme-dark .graph-view.color-fill-attachment { color: color-mix(in srgb, var(--clw-accent) 60%, var(--clw-support)); }
+.theme-dark .graph-view.color-fill-unresolved { color: color-mix(in srgb, var(--clw-border) 70%, transparent); }
+.theme-dark .graph-view.color-fill-highlight  { color: color-mix(in srgb, var(--clw-accent) 80%, transparent); }
+.theme-dark .graph-view.color-circle          { color: var(--clw-border); }
+.theme-dark .graph-view.color-line            { color: color-mix(in srgb, var(--clw-border) 70%, transparent); }
+.theme-dark .graph-view.color-line-highlight  { color: var(--clw-accent); }
+.theme-dark .graph-view.color-arrow           { color: var(--clw-accent); }
+.theme-dark .graph-view.color-text            { color: var(--clw-ink-muted); }
