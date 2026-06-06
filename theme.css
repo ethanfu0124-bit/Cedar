@@ -1044,7 +1044,17 @@ body .dropdown {
   border-radius: var(--clw-radius-m);
   border: var(--clw-border-width) solid var(--clw-border);
   padding: var(--size-4-3) var(--size-4-4);
+  word-break: normal;
+  overflow-wrap: normal;
+}
+
+/* Scroll wide formulas on the inner container — keeps MathJax
+   baseline-adjustment margins from being clipped by a BFC on the <p> */
+.math.math-block mjx-container[display="true"] {
   overflow-x: auto;
+  overflow-y: visible;
+  display: block;
+  max-width: 100%;
 }
 
 .math.math-inline {
