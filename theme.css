@@ -1039,19 +1039,8 @@ body .dropdown {
 }
 
 /* ─── Math (MathJax / KaTeX) ──────────────────────────────── */
-/* Keep <p> unstyled and full-width; card goes on the inner mjx-container
-   so the border wraps only the formula, not the entire line width */
 .math.math-block {
   overflow-x: auto;
-  text-align: center;
-}
-
-.math.math-block > mjx-container[display="true"] {
-  background: var(--clw-card-strong);
-  border-radius: var(--clw-radius-m);
-  border: var(--clw-border-width) solid var(--clw-border);
-  padding: var(--size-4-3) var(--size-4-4);
-  display: inline-block !important;
 }
 
 .math.math-inline {
