@@ -34,6 +34,10 @@ body {
   --callout-title-weight: 650;
   --callout-content-padding: var(--size-4-2) 0 0;
   --callout-content-background: transparent;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-optical-sizing: auto;
 }
 
 .theme-light {
@@ -285,8 +289,17 @@ body {
 
 .markdown-source-view.mod-cm6 .cm-scroller,
 .markdown-preview-view {
-  line-height: 1.65;
+  line-height: 1.68;
   font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "palt" 1;
+}
+
+/* H1 centered */
+.markdown-rendered h1 {
+  text-align: center;
+}
+
+.markdown-source-view.mod-cm6 .HyperMD-header.HyperMD-header-1 {
+  text-align: center;
 }
 
 .markdown-rendered a.internal-link,
