@@ -93,6 +93,7 @@ body {
   --clw-quote-bg: color-mix(in srgb, var(--clw-accent) 6%, transparent);
   --clw-quote-text: color-mix(in srgb, var(--text-normal) 84%, var(--text-muted));
   --clw-code-surface: #1c1917;
+  --clw-code-header: #2a2420;
   --heading-spacing: calc(var(--p-spacing) * 2.18);
   --h1-color: color-mix(in srgb, var(--clw-accent-hover) 58%, var(--text-normal));
   --h2-color: color-mix(in srgb, var(--text-normal) 82%, var(--clw-accent));
@@ -175,6 +176,7 @@ body {
   --clw-quote-bg: color-mix(in srgb, var(--clw-accent) 8%, transparent);
   --clw-quote-text: color-mix(in srgb, var(--text-normal) 82%, var(--text-muted));
   --clw-code-surface: #0f0d0c;
+  --clw-code-header: #161210;
   --heading-spacing: calc(var(--p-spacing) * 2.18);
   --h1-color: color-mix(in srgb, var(--clw-accent-hover) 62%, var(--text-normal));
   --h2-color: color-mix(in srgb, var(--text-normal) 66%, var(--clw-accent));
@@ -650,7 +652,7 @@ body {
 .cm-line.HyperMD-codeblock-end {
   font-size: 1em;
   color: var(--clw-ink-muted);
-  background: color-mix(in srgb, var(--clw-code-surface) 80%, var(--clw-shell));
+  background: var(--clw-code-header);
 }
 
 /* Syntax highlight tokens on dark surface */
